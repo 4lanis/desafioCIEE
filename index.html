@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Library</title>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <header class="">
+    <h1>BIBLIOTECA DE FILMES</h1>
+        </header>
+    <!--formulário para inserir novos filmes-->				
+		<div class="cadastro">
+   		<br>
+              
+              <h2>CADASTRO DE FILMES</h2>
+               <hr> 
+              <label for="titulo">Filme: </label>
+            <input type="text" id="titulo" placeholder="Digite o Título" required>
+            <br>
+            <br>
+            <label for="dir">Diretor: </label>
+            <input type="text" id="dir" placeholder="Digite o Nome" required>
+            <br>
+            <br>
+            <label for="ator">Atores: </label>
+            <input type="text" id="ator" placeholder="Digite os Nomes" required>
+            <br>
+            <br>
+            <label for="ano">Ano de Lançamento: </label>
+            <input type="number" id="ano" placeholder="Digite o Ano" maxlength="4" required>
+            <br>
+            <br>
+            <label for="genero">Gênero: </label>
+            <select name="genero" id="genero" required>
+                <option value="">Selecione</option>
+                <option value="Ação">Ação</option>
+                <option value="Animação">Animação</option>
+                <option value="Comédia">Comédia</option>
+                <option value="Documentário">Documentário</option>
+                <option value="Romance">Romance</option>
+                <option value="Suspense">Suspense</option>
+                <option value="Terror">Terror</option>
+            </select>
+        <br>
+        <div class="btn">
+        <button onclick="filme.cadastrar()" id="botao">Cadastrar</button>
+          </div>
+           </div>
+    
+    <div class="lista">
+        <hr>
+        <h2>LISTA DE FILMES</h2>
+        <table>
+            <thead>
+		<th>ID</th>
+                <th>Título</th>
+                <th>Diretor</th>
+                <th>Atores</th>
+                <th>Ano de Lançamento</th>
+                <th>Gênero</th>
+                <th>Opções</th>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        
+    </div>
+   <script src="scripts.js"></script> 
+   
+</body>
+</html>
