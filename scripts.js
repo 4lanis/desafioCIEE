@@ -1,11 +1,11 @@
-class Filmes { //inicia��o da classe
+class Filmes { //iniciação da classe 
 
     constructor() {
 	this.id = 1;
-    this.filmes = [];
+    	this.filmes = [];
 	this.edit = null;
         }
-    //funcaoo que executa as outras fun��es ao clicar no bot�o 'cadastrar'	
+    //função que executa as outras funções ao clicar no botão 'cadastrar'	
     cadastrar() {
         let filme = this.informar();
 	if (this.edit == null) { //caso as informa��es dos inputs estejam vazias, adiciona o conte�do
@@ -13,13 +13,13 @@ class Filmes { //inicia��o da classe
 	} else { //caso estejam preenchidas por ids, entende-se que o usu�rio vai editar
 	    this.upd(this.edit, filme);
 	}
-    this.listarFilmes();
+    	this.listarFilmes();
 	this.limparDados();
         
 	} 
 
-	limparDados() {
-	    document.getElementById('titulo').value = '';
+    limparDados() {
+	document.getElementById('titulo').value = '';
     	document.getElementById('dir').value = '';
     	document.getElementById('ator').value = '';
     	document.getElementById('ano').value = '';
@@ -39,7 +39,7 @@ class Filmes { //inicia��o da classe
         for (let i = 0; i < this.filmes.length; i++) { 
 
             let tr = tbody.insertRow();
-	        let tdId = tr.insertCell();
+	    let tdId = tr.insertCell();
             let tdTitulo = tr.insertCell();
             let tdDiretor = tr.insertCell();
             let tdAtores = tr.insertCell();
@@ -54,8 +54,8 @@ class Filmes { //inicia��o da classe
             tdAno.innerText = this.filmes[i].ano;
             tdGenero.innerText = this.filmes[i].genero;
 	    
-	        tdOpcoes.classList.add('center');
-	        let editIcon = document.createElement('img');
+	    tdOpcoes.classList.add('center');
+	    let editIcon = document.createElement('img');
             editIcon.src = 'ed.png';
             editIcon.setAttribute("onclick", "filme.editar("+ JSON.stringify(this.filmes[i]) +")");		
             let xIcon = document.createElement('img');	
@@ -67,14 +67,14 @@ class Filmes { //inicia��o da classe
         }
     } 
          
-    	//adiciona os registros ao array e incrementa o valor do id
-    
+    	
+    //adiciona os registros ao array e incrementa o valor do id
     add(filme) {
         this.filmes.push(filme);
 	    this.id++;
                 }  
-	//atualizando os dados
-
+	
+   //atualizando os dados
     upd(id, filme) {
 	for (let i = 0; i < this.filmes.length; i++) {
 	   if (this.filmes[i].id == id) {
@@ -91,8 +91,7 @@ class Filmes { //inicia��o da classe
 // le os dados informados no input e atribui as variáveis do array	
     informar() {
         let filme = {}
-
-	    filme.id = this.id;
+	filme.id = this.id;
         filme.titulo = document.getElementById('titulo').value;
         filme.diretor = document.getElementById('dir').value;
         filme.atores = document.getElementById('ator').value;
@@ -105,7 +104,7 @@ class Filmes { //inicia��o da classe
     // funçao para remover o registro selecionado	
     remover(id) {
 	    if (confirm("Quer deletar o cadastro deste filme?")) { 
-	     let tbody = document.getElementById('tbody');
+	    let tbody = document.getElementById('tbody');
             for (let i = 0; i < this.filmes.length; i++) {	
             if (this.filmes[i].id == id) {
             this.filmes.splice(i, 1);
@@ -116,7 +115,6 @@ class Filmes { //inicia��o da classe
 	}
 
     //funçao para editar itens
-
     editar(info) {
 
     this.edit = info.id;	
