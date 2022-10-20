@@ -56,10 +56,10 @@ class Filmes { //inicia��o da classe
 	    
 	        tdOpcoes.classList.add('center');
 	        let editIcon = document.createElement('img');
-            editIcon.src = 'img/ed.png';
+            editIcon.src = 'ed.png';
             editIcon.setAttribute("onclick", "filme.editar("+ JSON.stringify(this.filmes[i]) +")");		
             let xIcon = document.createElement('img');	
-            xIcon.src = 'img/x.png';
+            xIcon.src = 'x.png';
             xIcon.setAttribute("onclick", "filme.remover("+ this.filmes[i].id +")");
             tdOpcoes.appendChild(editIcon);
             tdOpcoes.appendChild(xIcon);
